@@ -28,7 +28,7 @@ const Index = () => {
           <Categorylist />
           <CultureSection />
           <ServicesSection />
-          <GlobalSection />
+          {/* <GlobalSection /> */}
         </main>
         <Footer />
       </div>

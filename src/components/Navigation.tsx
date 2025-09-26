@@ -19,42 +19,42 @@ const Navigation = () => {
         {/* Logo */}
         <div className="nav-item">
           <h1 className="text-2xl font-light tracking-widest text-primary">
-            TP
+            TP TILES
           </h1>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-12">
           <a
-            href="#culture"
+            href="#products"
             className="nav-item text-sm font-light letter-spaced hover:opacity-70 transition-tp-fast text-primary"
           >
-            CULTURE
+            PRODUCTS
           </a>
           <a
-            href="#projects"
+            href="#tiles"
             className="nav-item text-sm font-light letter-spaced hover:opacity-70 transition-tp-fast text-primary"
           >
-            PROJECTS
+            TILES
           </a>
           <a
-            href="#services"
+            href="#roofing"
             className="nav-item text-sm font-light letter-spaced hover:opacity-70 transition-tp-fast text-primary"
           >
-            SERVICES
+            ROOFING
           </a>
           <a
-            href="#careers"
+            href="#about"
             className="nav-item text-sm font-light letter-spaced hover:opacity-70 transition-tp-fast text-primary"
           >
-            CAREERS
+            ABOUT
           </a>
         </div>
 
         {/* Contact Button */}
         <div className="nav-item">
           <button className="text-sm font-light letter-spaced hover:opacity-70 transition-tp-fast text-primary">
-            LET'S TALK
+            CONTACT US
           </button>
         </div>
 
