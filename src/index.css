@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TP Global Design System - Modern Creative Agency
+All colors MUST be HSL for proper theming.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+    --tp-black: 0 0% 0%;
+    --tp-white: 0 0% 100%;
+    --tp-gray: 0 0% 20%;
+    --tp-light-gray: 0 0% 90%;
+
+    /* Component Colors */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 98%;
+
+    --radius: 0rem;
+
+    /* TP Specific Design Tokens */
+    --letter-spacing-wide: 0.2em;
+    --letter-spacing-wider: 0.4em;
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode inherits the same values as we're already dark-themed */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 98%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* TP Typography Classes */
+@layer components {
+  .letter-spaced {
+    letter-spacing: var(--letter-spacing-wide);
+  }
+
+  .letter-spaced-wide {
+    letter-spacing: var(--letter-spacing-wider);
+  }
+
+  .text-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-wide;
+  }
+
+  .text-section {
+    @apply text-xl md:text-2xl lg:text-3xl font-light;
+  }
+
+  .scrolling-text {
+    white-space: nowrap;
+    animation: scroll-horizontal 60s linear infinite;
+  }
+
+  .transition-tp {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-tp-fast {
+    transition: var(--transition-fast);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
+
+/* GSAP Animations */
+@layer utilities {
+  .split-text {
+    display: inline-block;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .fade-in {
+    opacity: 0;
+  }
+
+  .scale-reveal {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes scroll-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
