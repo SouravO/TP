@@ -56,7 +56,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 
   return (
     <div
-      className={`fixed inset-0 bg-background z-50 flex items-center justify-center transition-opacity duration-500 ${
+      className={`fixed inset-0 bg-black z-50 flex items-center justify-center transition-opacity duration-500 ${
         isComplete ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >

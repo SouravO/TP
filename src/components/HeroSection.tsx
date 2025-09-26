@@ -7,14 +7,12 @@ gsap.registerPlugin(ScrollTrigger);
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const heroElement = heroRef.current;
     const titleElement = titleRef.current;
-    const backgroundElement = backgroundRef.current;
 
-    if (heroElement && titleElement && backgroundElement) {
+    if (heroElement && titleElement ) {
       // Initial setup
       gsap.set('.hero-letter', { opacity: 0, y: 100, rotationX: 90 });
       gsap.set('.hero-subtitle', { opacity: 0, y: 50 });
@@ -56,25 +54,7 @@ const HeroSection = () => {
         ease: 'sine.inOut'
       });
 
-      // Scroll-triggered parallax
-      ScrollTrigger.create({
-        trigger: heroElement,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1,
-        onUpdate: (self) => {
-          gsap.to(backgroundElement, {
-            y: self.progress * 200,
-            duration: 0.3
-          });
-          gsap.to('.floating-element', {
-            y: self.progress * 150,
-            rotation: self.progress * 360,
-            duration: 0.3,
-            stagger: 0.1
-          });
-        }
-      });
+
 
       // Magnetic cursor effect for title
       const handleMouseMove = (e: MouseEvent) => {
@@ -112,57 +92,64 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div ref={backgroundRef} className="absolute inset-0 pointer-events-none">
-        <div className="floating-element absolute top-1/4 left-1/4 w-32 h-32 border border-primary/20 rounded-full"></div>
-        <div className="floating-element absolute top-3/4 right-1/4 w-24 h-24 bg-primary/10 rounded-full blur-sm"></div>
-        <div className="floating-element absolute top-1/2 left-3/4 w-16 h-16 border border-primary/30 rotate-45"></div>
-        <div className="floating-element absolute bottom-1/4 left-1/2 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full"></div>
-        <div className="floating-element absolute top-1/3 right-1/3 w-2 h-32 bg-primary/30 transform rotate-12"></div>
-      </div>
+   <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
 
-      <div ref={heroRef} className="text-center max-w-6xl mx-auto relative z-10">
-        <h1 ref={titleRef} className="text-hero mb-8 font-light perspective-1000">
-          <div className="mb-4">
-            {splitText('EPIC')}
-            <span className="mx-8"></span>
-            {splitText('EXPERIENCES')}
-          </div>
-          <div className="mb-4 text-4xl md:text-5xl lg:text-6xl">
-            {splitText('SHAPING')}
-            <span className="mx-6"></span>
-            <span className="font-medium">
-              {splitText('CULTURE')}
-            </span>
-          </div>
-        </h1>
-        
-        <div className="hero-subtitle space-y-4">
-          <div className="flex flex-wrap justify-center gap-4 text-sm letter-spaced font-light opacity-70">
-            <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">HONG KONG</span>
-            <span>•</span>
-            <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">DUBAI</span>
-            <span>•</span>
-            <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">ZURICH</span>
-            <span>•</span>
-            <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">AMSTERDAM</span>
-            <span>•</span>
-            <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">LOS ANGELES</span>
-            <span>•</span>
-            <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">SHANGHAI</span>
-          </div>
-        </div>
-      </div>
+  {/* Background Video */}
+  <video
+    className="absolute inset-0 w-full h-full object-cover"
+    src="/assets/videos/hero.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
 
-      {/* Enhanced Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="hero-subtitle flex flex-col items-center">
-          <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent opacity-50 animate-pulse"></div>
-          <div className="mt-2 text-xs letter-spaced opacity-40">SCROLL</div>
-        </div>
+  {/* Dark overlay for better text visibility (optional) */}
+  <div className="absolute inset-0 bg-black/40"></div>
+
+  {/* Hero Content */}
+  <div ref={heroRef} className="text-center max-w-6xl mx-auto relative z-10">
+    <h1 ref={titleRef} className="text-hero mb-8 font-light perspective-1000">
+      <div className="mb-4">
+        {splitText('EPIC')}
+        <span className="mx-8"></span>
+        {splitText('EXPERIENCES')}
       </div>
-    </section>
+      <div className="mb-4 text-4xl md:text-5xl lg:text-6xl">
+        {splitText('SHAPING')}
+        <span className="mx-6"></span>
+        <span className="font-medium">
+          {splitText('CULTURE')}
+        </span>
+      </div>
+    </h1>
+    
+    <div className="hero-subtitle space-y-4">
+      <div className="flex flex-wrap justify-center gap-4 text-sm letter-spaced font-light opacity-70">
+        <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">HONG KONG</span>
+        <span>•</span>
+        <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">DUBAI</span>
+        <span>•</span>
+        <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">ZURICH</span>
+        <span>•</span>
+        <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">AMSTERDAM</span>
+        <span>•</span>
+        <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">LOS ANGELES</span>
+        <span>•</span>
+        <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">SHANGHAI</span>
+      </div>
+    </div>
+  </div>
+
+  {/* Enhanced Scroll indicator */}
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+    <div className="hero-subtitle flex flex-col items-center">
+      <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent opacity-50 animate-pulse"></div>
+      <div className="mt-2 text-xs letter-spaced opacity-40">SCROLL</div>
+    </div>
+  </div>
+</section>
+
   );
 };
 
