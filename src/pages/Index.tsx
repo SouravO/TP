@@ -9,6 +9,10 @@ import LoadingScreen from '@/components/LoadingScreen';
 import CustomCursor from '@/components/CustomCursor';
 import OverlayComponent from '@/components/OverlayComponent';
 import Categorylist from '@/components/Categorylist';
+import OurProjects from '@/components/OurProjects';
+import ClientCount from '@/components/ClientCount';
+import SpecialService from '@/components/SpecialService';
+import SectionVedeo from '@/components/SectionVedeo';
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -28,6 +32,10 @@ const Index = () => {
           <Categorylist />
           <CultureSection />
           <ServicesSection />
+          <ClientCount />
+          <SpecialService />
+          <SectionVedeo />
+          {/* <OurProjects /> */}
           {/* <GlobalSection /> */}
         </main>
         <Footer />

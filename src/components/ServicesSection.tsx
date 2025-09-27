@@ -1,173 +1,201 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, AnimatePresence } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(2);
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const services = [
+    {
+      id: 1, title: "STONE CONSULTING", description: `At Quartz Stone Company, we understand the importance of sourcing high-quality stone for your projects. With our extensive network and deep knowledge of the industry, we accurately select the finest stones from around the world. Our commitment to sourcing ensures that every piece we work with meets the highest standards of beauty, durability, and sustainability.`,
+      image:
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 2, title: "DIGITAL FABRICATION", description: `At Quartz Stone Company, we understand the importance of sourcing high-quality stone for your projects. With our extensive network and deep knowledge of the industry, we accurately select the finest stones from around the world. Our commitment to sourcing ensures that every piece we work with meets the highest standards of beauty, durability, and sustainability.`,
+      image:
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 3,
+      title: "STONE SOURCING",
+      description: `At Quartz Stone Company, we understand the importance of sourcing high-quality stone for your projects. With our extensive network and deep knowledge of the industry, we accurately select the finest stones from around the world. Our commitment to sourcing ensures that every piece we work with meets the highest standards of beauty, durability, and sustainability.`,
+      image:
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 4, title: "PROJECT INSTALLATION", description: `At Quartz Stone Company, we understand the importance of sourcing high-quality stone for your projects. With our extensive network and deep knowledge of the industry, we accurately select the finest stones from around the world. Our commitment to sourcing ensures that every piece we work with meets the highest standards of beauty, durability, and sustainability.`,
+      image:
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 5, title: "FINE ART FABRICATION", description: `At Quartz Stone Company, we understand the importance of sourcing high-quality stone for your projects. With our extensive network and deep knowledge of the industry, we accurately select the finest stones from around the world. Our commitment to sourcing ensures that every piece we work with meets the highest standards of beauty, durability, and sustainability.`,
+      image:
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 6, title: "STONE CLADDING", description: `At Quartz Stone Company, we understand the importance of sourcing high-quality stone for your projects. With our extensive network and deep knowledge of the industry, we accurately select the finest stones from around the world. Our commitment to sourcing ensures that every piece we work with meets the highest standards of beauty, durability, and sustainability.`,
+      image:
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 7, title: "STONE RESTORATION", description: `At Quartz Stone Company, we understand the importance of sourcing high-quality stone for your projects. With our extensive network and deep knowledge of the industry, we accurately select the finest stones from around the world. Our commitment to sourcing ensures that every piece we work with meets the highest standards of beauty, durability, and sustainability.`,
+      image:
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    },
+  ];
 
   useEffect(() => {
     const sectionElement = sectionRef.current;
+    if (!sectionElement) return;
 
-    if (sectionElement) {
-      // Enhanced service lines animation with 3D effects
-      gsap.fromTo(
-        ".service-line",
-        { opacity: 0, x: -150, rotationY: 45, scale: 0.8 },
-        {
-          opacity: 1,
-          x: 0,
-          rotationY: 0,
-          scale: 1,
-          duration: 1.8,
-          stagger: 0.3,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: sectionElement,
-            start: "top 70%",
-            end: "bottom 30%",
-          },
-        }
-      );
+    // Fade-in animation
+    gsap.fromTo(
+      sectionElement.querySelectorAll(".service-item"),
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionElement,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
 
-      // Variable speed scrolling text animation
-      services.forEach((_, index) => {
-        gsap.to(`.scrolling-service-${index}`, {
-          x: "-100%",
-          duration: 80 + index * 10, // Different speeds for each row
-          repeat: -1,
-          ease: "none",
+    // Parallax effect
+    ScrollTrigger.create({
+      trigger: sectionElement,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+      onUpdate: (self) => {
+        gsap.to(sectionElement, {
+          y: self.progress * 40,
+          duration: 0.3,
         });
-      });
+      },
+    });
 
-      // Parallax scroll effect for the entire section
+    // Optional: subtle video scale effect
+    if (videoRef.current) {
       ScrollTrigger.create({
         trigger: sectionElement,
         start: "top bottom",
         end: "bottom top",
-        scrub: 2,
+        scrub: 1,
         onUpdate: (self) => {
-          gsap.to(".scrolling-service", {
-            x: `${-50 + self.progress * 20}%`,
+          gsap.to(videoRef.current, {
+            scale: 1 + self.progress * 0.05,
             duration: 0.3,
           });
         },
       });
-
-      // Interactive hover effects for service cards
-      const serviceLines = sectionElement.querySelectorAll(".service-line");
-      serviceLines.forEach((line, index) => {
-        line.addEventListener("mouseenter", () => {
-          gsap.to(line, {
-            scale: 1.05,
-            y: -10,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-          gsap.to(line.querySelector("h3"), {
-            color: "hsl(var(--primary))",
-            duration: 0.3,
-          });
-        });
-
-        line.addEventListener("mouseleave", () => {
-          gsap.to(line, {
-            scale: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-          gsap.to(line.querySelector("h3"), {
-            color: "hsl(var(--foreground))",
-            duration: 0.3,
-          });
-        });
-      });
     }
   }, []);
-
-  const services = [
-    { name: "CERAMIC TILES", description: "Premium quality ceramic tiles" },
-    { name: "VITRIFIED TILES", description: "Durable vitrified flooring" },
-    { name: "METAL ROOFING", description: "Strong metal roofing solutions" },
-    { name: "INSTALLATION", description: "Professional installation service" },
-  ];
 
   return (
     <section
       ref={sectionRef}
       id="services"
-      className="py-20 overflow-hidden relative"
+      className="relative min-h-screen text-white overflow-hidden"
     >
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-primary"></div>
-        <div className="absolute top-0 right-1/4 w-px h-full bg-primary"></div>
-        <div className="absolute top-1/2 left-0 w-full h-px bg-primary"></div>
-      </div>
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="/videos/stone-background.mp4" type="video/mp4" />
+      </video>
 
-      {/* Enhanced scrolling service names */}
-      <div className="mb-20">
-        {services.map((service, index) => (
-          <div
-            key={service.name}
-            className="py-6 border-t border-border/20 last:border-b relative overflow-hidden"
-          >
-            <div
-              className={`scrolling-service scrolling-service-${index} flex whitespace-nowrap`}
-            >
-              {Array.from({ length: 25 }).map((_, i) => (
-                <span
-                  key={i}
-                  className={`text-4xl md:text-6xl lg:text-8xl font-light letter-spaced mr-20 transition-opacity duration-300 ${
-                    index % 2 === 0
-                      ? "opacity-15 hover:opacity-30"
-                      : "opacity-10 hover:opacity-25"
-                  }`}
-                  style={{
-                    background: `linear-gradient(90deg, transparent, hsl(var(--primary) / ${
-                      0.1 + (i % 3) * 0.05
-                    }), transparent)`,
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                  }}
-                >
-                  {service.name} ·
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
 
-      {/* Enhanced service details */}
-      <div className="px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+      <div className="relative z-20 max-w-6xl mx-auto px-6 py-20">
+        {/* Section Heading */}
+        <div className="mb-16 text-center">
+          <h2 className="text-6xl md:text-8xl font-light letter-spaced-wide mb-8 hover:tracking-widest transition-all duration-700 cursor-pointer inline-block">
+            Services
+          </h2>
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+        </div>
+
+        <div className="absolute top-1/4 right-1/4 w-1 h-24 bg-primary/30 transform rotate-12 animate-pulse"></div>
+
+        {/* Services List */}
+        <div className="space-y-6">
+          {services.map((service, index) => (
+            <div key={service.id} className="service-item">
               <div
-                key={service.name}
-                className="service-line group cursor-pointer p-6 rounded-lg border border-transparent hover:border-primary/20 transition-all duration-500"
+                className="flex items-center justify-between cursor-pointer border-b border-gray-700 py-4"
+                onClick={() =>
+                  setActiveIndex(activeIndex === index ? null : index)
+                }
               >
-                <div className="relative">
-                  <div className="absolute -top-2 -left-2 w-8 h-8 border-l border-t border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r border-b border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <h3 className="text-xl font-light letter-spaced mb-4 transition-colors duration-300">
-                    {service.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                    {service.description}
-                  </p>
-
-                  <div className="mt-4 w-12 h-px bg-gradient-to-r from-primary/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                </div>
+                <span className="text-xl font-semibold">
+                  {String(service.id).padStart(2, "0")} &nbsp; {service.title}
+                </span>
+                <span className="text-2xl">
+                  {activeIndex === index ? "−" : "+"}
+                </span>
               </div>
-            ))}
-          </div>
+
+
+              <AnimatePresence initial={false}>
+                {activeIndex === index && service.description && (
+                  <motion.div
+                    key="content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="bg-gray-900/80 px-6 py-8 rounded-lg mt-4 flex flex-col md:flex-row gap-6 backdrop-blur-sm">
+                      {service.image && (
+                        <motion.img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full md:w-1/2 rounded-lg object-cover"
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, ease: "easeOut" }}
+                        />
+                      )}
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold mb-4">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-300 mb-6">{service.description}</p>
+                        <button className="group border border-white px-6 py-2 rounded-full text-sm hover:bg-white hover:text-black transition relative overflow-hidden">
+                          <span className="relative z-10">LEARN MORE</span>
+                          <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
         </div>
       </div>
+      <div className="absolute top-1/4 right-1/4 w-1 h-24 bg-primary/30 transform rotate-12 animate-pulse"></div>
+
     </section>
   );
 };
