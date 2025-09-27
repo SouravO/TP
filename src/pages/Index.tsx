@@ -13,6 +13,8 @@ import OurProjects from '@/components/OurProjects';
 import ClientCount from '@/components/ClientCount';
 import SpecialService from '@/components/SpecialService';
 import SectionVedeo from '@/components/SectionVedeo';
+import ContactUs from '@/components/ContactUs';
+import AutamaticSliding from '@/components/AutamaticSliding';
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -32,9 +34,11 @@ const Index = () => {
           <Categorylist />
           <CultureSection />
           <ServicesSection />
-          <ClientCount />
           <SpecialService />
+          <ClientCount />
           <SectionVedeo />
+          <ContactUs />
+          <AutamaticSliding />
           {/* <OurProjects /> */}
           {/* <GlobalSection /> */}
         </main>

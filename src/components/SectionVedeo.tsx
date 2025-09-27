@@ -6,7 +6,7 @@ export default function SectionVideo() {
         <section className="relative h-[80vh] md:h-[90vh] w-full text-white overflow-hidden">
             {/* Background Video (replace with your actual mp4 URL) */}
             <video
-                src="https://www.pexels.com/download/video/4036096/"
+                src="https://www.pexels.com/download/video/6474089/"
                 autoPlay
                 loop
                 muted
@@ -45,10 +45,10 @@ export default function SectionVideo() {
                     </div>
 
                     {/* Thumbnails */}
-                    <div className="grid grid-cols-2 gap-3 w-full max-w-md">
+                    <div className="grid grid-cols-2 gap-10 w-full max-w-md">
                         <div className="relative group overflow-hidden rounded-lg">
                             <img
-                                src="/thumbnail1.jpg"
+                                src="https://images.unsplash.com/photo-1567429159662-4fb03dd9c117?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXJjaGl0ZWN0dXJlJTIwdmVkZW9zfGVufDB8fDB8fHww"
                                 alt="Thumbnail 1"
                                 className="w-full h-24 md:h-28 object-cover"
                             />
@@ -59,7 +59,7 @@ export default function SectionVideo() {
 
                         <div className="relative group overflow-hidden rounded-lg">
                             <img
-                                src="/thumbnail2.jpg"
+                                src="https://images.unsplash.com/photo-1638992096578-04db13b22f08?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFyY2hpdGVjdHVyZSUyMHZlZGVvc3xlbnwwfHwwfHx8MA%3D%3D"
                                 alt="Thumbnail 2"
                                 className="w-full h-24 md:h-28 object-cover"
                             />

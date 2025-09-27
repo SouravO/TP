@@ -146,10 +146,10 @@ const ServicesSection = () => {
                   setActiveIndex(activeIndex === index ? null : index)
                 }
               >
-                <span className="text-xl font-semibold">
+                <span className="text-xl font-semibold text-[#4895ef]">
                   {String(service.id).padStart(2, "0")} &nbsp; {service.title}
                 </span>
-                <span className="text-2xl">
+                <span className="text-2xl text-[#4895ef]">
                   {activeIndex === index ? "−" : "+"}
                 </span>
               </div>

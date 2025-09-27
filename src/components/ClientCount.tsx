@@ -41,11 +41,11 @@ export default function ClientCount() {
             ref={sectionRef}
             className=" text-white py-10 px-4 my-10"
         >
-            <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 border border-white/10 rounded-lg overflow-hidden backdrop-blur-sm">
+            <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 border border-[#4895ef] rounded-lg overflow-hidden backdrop-blur-sm">
                 {stats.map((stat, idx) => (
                     <div
                         key={idx}
-                        className="text-center py-6 border-r border-white/10 last:border-r-0"
+                        className="text-center py-6 border-r border-[#4895ef] last:border-r-0"
                     >
                         <h3 className="text-3xl md:text-4xl font-bold">
                             {inView ? (
@@ -67,3 +67,7 @@ export default function ClientCount() {
         </section>
     );
 }
+
+
+
+

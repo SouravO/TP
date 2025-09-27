@@ -20,10 +20,10 @@ export default function Footer() {
                 const contactSection = document.getElementById("contact");
                 contactSection?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
+              className="group font-bold inline-flex items-center gap-3 bg-gradient-to-r bg-[#4895ef] hover:from-[#4361ee] hover:to-[#4361ee] text-white px-4 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
             >
               Get In Touch
-              <span className="bg-red-600 text-white ml-2 px-1 py-0.5 rounded-full text-sm text-[17px]">+</span>
+              <span className="text-white ml-2 px-1 py-0.5 rounded-full text-sm text-[17px]">+</span>
             </button>
 
           </div>
@@ -34,16 +34,16 @@ export default function Footer() {
             <div className="" >
               <h4 className="text-white font-semibold mb-2 text-[17px]">Location</h4>
               <p>
-                1330 Huffman Rd, Anchorage,
+                BYPASS ROAD, KALPETTA
                 <br />
-                Alask, United States
+                WAYANAD
               </p>
             </div>
 
             {/* Contact */}
             <div className="self-end text-right">
               <h4 className="text-white font-semibold mb-2 text-[17px]">Contact</h4>
-              <p className="ml-1  text-[15px]">+661 2058 6987 20</p>
+              <p className="ml-1 text-[15px]">97441 34363 | 96562 72272</p>
               <p className="ml-1 text-[15px]">Hello@Studio.com</p>
             </div>
 
@@ -53,7 +53,7 @@ export default function Footer() {
               <ul className="space-y-1">
                 {["Instagram", "X. Twitter/X", "YouTube", "Pinterest"].map((item) => (
                   <li key={item} className="flex items-center gap-2">
-                    <span className="text-red-600 text-[14px]">●</span>
+                    <span className="text-[#4895ef] text-[14px]">●</span>
                     <p className="ml-1  text-[15px]"> {item}</p>
                     {/* <span className="text-red-600 text-sm">●</span> {item} */}
                   </li>
@@ -67,7 +67,7 @@ export default function Footer() {
               <ul className="space-y-1">
                 {["Privacy Policy", "About", "Services", "Work", "Blog"].map((link) => (
                   <li key={link} className="flex items-center justify-end gap-2">
-                    <span className="text-red-600 text-[14px]">●</span>
+                    <span className="text-[#4895ef] text-[14px]">●</span>
                     <p className="text-[15px]"> {link}</p>
                   </li>
                 ))}

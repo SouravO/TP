@@ -107,15 +107,19 @@ const HeroSection = () => {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/assets/videos/hero.mp4"
+        // src="/assets/videos/hero.mp4"
+
+        src='https://www.pexels.com/download/video/8213321/'
         autoPlay
         loop
         muted
         playsInline
       />
 
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 pointer-events-none"></div>
+
       {/* Dark overlay for better text visibility (optional) */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* <div className="absolute inset-0 bg-black/40"></div> */}
 
       {/* Hero Content */}
       <div
@@ -126,46 +130,61 @@ const HeroSection = () => {
           ref={titleRef}
           className="text-hero mb-8 font-light perspective-1000"
         >
-          <div className="mb-4">
+          {/* First line */}
+          <div className="mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl flex flex-wrap justify-center">
             {splitText("QUALITY")}
-            <span className="mx-8"></span>
+            <span className="mx-2 sm:mx-4 md:mx-6"></span>
             {splitText("TILES")}
           </div>
-          <div className="mb-4 text-4xl md:text-5xl lg:text-6xl">
+
+          {/* Second line */}
+          <div className="mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl flex flex-wrap justify-center">
             {splitText("PREMIUM")}
-            <span className="mx-6"></span>
+            <span className="mx-2 sm:mx-4 md:mx-6"></span>
             <span className="font-medium">{splitText("ROOFING")}</span>
           </div>
         </h1>
 
+
         <div className="hero-subtitle space-y-4">
-          <div className="flex flex-wrap justify-center gap-4 text-sm letter-spaced font-light opacity-70">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm md:text-base lg:text-lg font-light opacity-70 tracking-wide">
+
             <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">
               KALPETTA
             </span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
+
             <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">
               WAYANAD
             </span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
+
             <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">
               KERALA
             </span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
+
             <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">
               BYPASS ROAD
             </span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
+
             <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">
               97441 34363
             </span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
+
             <span className="hover:opacity-100 transition-opacity duration-300 cursor-pointer">
               96562 72272
             </span>
+
           </div>
         </div>
+
       </div>
+
+
+
 
       {/* Enhanced Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
@@ -174,7 +193,7 @@ const HeroSection = () => {
           <div className="mt-2 text-xs letter-spaced opacity-40">SCROLL</div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

@@ -12,40 +12,40 @@ const categories = [
     title: "ALL",
     count: 23,
     images: [
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1683629357846-30eacff8f615?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1hcmJsZSUyMGZsb29yfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1678373454088-8f75ac778fbb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1hcmJsZSUyMGZsb29yfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1550053808-52a75a05955d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hcmJsZSUyMGZsb29yfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1594706240576-1f668f6b1bb0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFyYmxlJTIwZmxvb3J8ZW58MHx8MHx8fDA%3D",
     ],
   },
   {
     title: "MIX",
     count: 14,
     images: [
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&sat=-100",
-      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1574790398149-c0ccb19e8a93?w=400&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1496024840928-4c417adf211d?w=400&h=300&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1722048810826-751afbcc98c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW50ZXJpb3JzfGVufDB8fDB8fHww",
+      "https://media.istockphoto.com/id/2160552278/photo/elevated-with-wall-texture-mirror-shoe-cabinet-in-modern-entry-space.webp?a=1&b=1&s=612x612&w=0&k=20&c=JaSmeuVzpuhEVxncW_fffTzm_i6uyZA7xV4DwuLa1fE=",
+      "https://images.unsplash.com/photo-1616593918824-4fef16054381?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW50ZXJpb3JzfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1615875474908-f403116f5287?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yc3xlbnwwfHwwfHx8MA%3D%3D",
     ],
   },
   {
     title: "SOUND DESIGN",
     count: 11,
     images: [
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=300&fit=crop&hue=180",
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=200&fit=crop&hue=60",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop&hue=120",
-      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop&hue=240",
+      "https://images.unsplash.com/photo-1589271243958-d61e12b61b97?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yc3xlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGludGVyaW9yc3xlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1722034552807-6c8ede1aefca?q=80&w=775&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://media.istockphoto.com/id/1685858119/photo/3d-rendering-luxury-bedroom-suite-in-hotel-with-tv-and-cabinet-and-wardrobe.jpg?s=612x612&w=0&k=20&c=7zCJzCBK89YNx1eFgIaYyPsJPp0OuJs3bI-_TGauLvc=",
     ],
   },
   {
     title: "MUSIC",
     count: 7,
     images: [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&sepia=100",
-      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=200&fit=crop&sepia=80",
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=200&fit=crop&sepia=60",
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=300&fit=crop&sepia=40",
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://media.istockphoto.com/id/1990444472/photo/scandinavian-style-cozy-living-room-interior.webp?a=1&b=1&s=612x612&w=0&k=20&c=F5A3eF6myaJpITu5ABnGqNjacGWYskuxeZviU-KpxPE=",
+      "https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1522444195799-478538b28823?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D",
     ],
   },
 ];
@@ -220,13 +220,12 @@ export default function CategoryCards() {
               }}
             >
               <span
-                className={`${
-                  cat.title === "ALL"
+                className={`${cat.title === "ALL"
                     ? "text-[8rem]"
                     : cat.title === "SOUND DESIGN"
-                    ? "text-4xl"
-                    : "text-6xl"
-                } leading-none`}
+                      ? "text-4xl"
+                      : "text-6xl"
+                  } leading-none`}
               >
                 {cat.title}
               </span>
